@@ -18,7 +18,7 @@
   <link href="{{ asset('css/argon-dashboard.css?v=1.1.2') }}" rel="stylesheet" />
 </head>
 
-<body class="bg-default">
+<body class="bg-default" id="imagen">
   <div class="main-content">
     <!-- Barra de navegacion logo-->
     <nav class="navbar navbar-top navbar-horizontal navbar-expand-md navbar-dark">

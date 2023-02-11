@@ -17,6 +17,7 @@
   <link href="{{ asset('js/plugins/@fortawesome/fontawesome-free/css/all.min.css')}}" rel="stylesheet" />
   <!-- CSS Files -->
   <link href="{{ asset('css/argon-dashboard.css?v=1.1.2')}}" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/c18d6d61ee.js" crossorigin="anonymous"></script>
 </head>
 
 <body class="">

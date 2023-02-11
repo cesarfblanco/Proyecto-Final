@@ -7,8 +7,8 @@
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link " href="#">
-        <i class="ni ni-watch-time text-danger"></i> Mi rutina
+      <a class="nav-link " href="{{ url('/actividades') }}">
+        <i class="ni ni-watch-time text-danger"></i> Especialidades
       </a>
     </li>
     <li class="nav-item">
