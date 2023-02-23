@@ -12,13 +12,13 @@
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link " href="#">
-        <i class="ni ni-circle-08 text-orange"></i> Empleados
+      <a class="nav-link " href="{{ url('/entrenadores') }}">
+        <i class="ni ni-circle-08 text-primary"></i> Empleados
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link " href="#">
-        <i class="ni ni-single-02 text-yellow"></i> Usuarios
+      <a class="nav-link " href="{{ url('/clientes') }}">
+        <i class="ni ni-single-02 text-yellow"></i> Clientes
       </a>
     </li>
     <li class="nav-item">

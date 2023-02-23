@@ -35,6 +35,12 @@ Route::put('/actividades/{actividad}', [App\Http\Controllers\ActividadesControll
 
 Route::delete('/actividades/{actividad}', [App\Http\Controllers\ActividadesController::class, 'eliminar']);
 
+//Ruta entrenadores 
+Route::resource('entrenadores','App\Http\Controllers\entrenadorController');
+Route::resource('clientes','App\Http\Controllers\clientesController');
+
+
+
 
 
 

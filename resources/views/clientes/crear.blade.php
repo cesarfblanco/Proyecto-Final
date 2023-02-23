@@ -7,7 +7,7 @@
       <div class="card-header border-0">
         <div class="row align-items-center">
           <div class="col">
-            <h3 class="mb-0">Nueva Actividad</h3>
+            <h3 class="mb-0">Nuevo Cliente</h3>
           </div>
           <div class="col text-right">
             <a href="{{ url('/actividades') }}" class="btn btn-sm btn-info">
@@ -24,24 +24,34 @@
                   </div>         
             @endforeach
         @endif
-        <form action="{{ url('/actividades') }}" method="POST">
+        <form action="{{ url('/clientes') }}" method="POST">
             @csrf
              <div class="form-group">
-               <label for="name">Nombre de Actividad</label> 
+               <label for="name">Nombre del Cliente</label> 
                <input type="text" name="name" class="form-control" value="{{ old('name') }}" required>
              </div>
 
              <div class="form-group">
-                <label for="descripcion">Descripcion</label> 
-                <input type="text" name="descripcion" value="{{ old('descripcion') }}" class="form-control">
+                <label for="Apellido">Apellido</label> 
+                <input type="text" name="Apellido" value="{{ old('Apellido') }}" class="form-control">
               </div>
 
               <div class="form-group">
-                <label for="horario">Horario</label> 
-                <input type="time" name="horario" value="{{ old('horario') }}" class="form-control">
+                <label for="email">Correo Electronico</label> 
+                <input type="date" name="email" value="{{ old('email') }}" class="form-control">
               </div>
 
-              <button type="submit" class="btn btn-sm btn-primary">Crear Actividad</button>
+              <div class="form-group">
+                <label for="FechaNac">FechaNac</label> 
+                <input type="date" name="FechaNac" value="{{ old('FechaNac') }}" class="form-control">
+              </div>
+
+              <div class="form-group">
+                <label for="tlf">Telefono</label> 
+                <input type="text" name="tlf" value="{{ old('tlf') }}" class="form-control" maxlength="9">
+              </div>
+
+              <button type="submit" class="btn btn-sm btn-primary">Crear Cliente</button>
         </form>
       </div>
     </div>

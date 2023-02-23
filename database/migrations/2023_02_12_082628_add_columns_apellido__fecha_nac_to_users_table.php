@@ -13,12 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('actividades', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name');
-            $table->string('description')->nullable();
-            $table->time('horario');
-            $table->timestamps();
+        Schema::table('users', function (Blueprint $table) {
+            $table->string('apellido',20)->nullable()->after('name');
+            $table->date('FechaNac')->after('apellido')->nullable();
 
         });
     }
@@ -30,6 +27,10 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('actividades');
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('apellido');
+            $table->dropColumn('FechaNac');
+
+        });
     }
 };
