@@ -12,11 +12,9 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
+   
+
+     //La propiedad fillable es para visualizar los campos de la tabla en las consultas sql
     protected $fillable = [
         'name',
         'apellido',
@@ -27,22 +25,24 @@ class User extends Authenticatable
         'role'
     ];
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array<int, string>
-     */
+    
     protected $hidden = [
         'password',
         'remember_token',
     ];
 
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
+   
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function scopeClientes($query){
+        return $query->where('role','clientes');
+
+    }
+
+    public function scopeEntrenadores($query){
+        return $query->where('role','entrenadores');
+
+    }
 }

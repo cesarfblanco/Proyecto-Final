@@ -1,3 +1,6 @@
+<?php
+   use Illuminate\Support\Str;
+?>
 @extends('layouts.dashboard')
 
 @section('content')

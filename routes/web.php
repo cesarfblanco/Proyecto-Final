@@ -19,26 +19,28 @@ Route::get('/', function () {
 
 Auth::routes();
 
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-
+Route::middleware(['auth', 'admin'])->group(function () {
 //ruta Actividades
-Route::get('/actividades', [App\Http\Controllers\ActividadesController::class, 'index'])->name('index');
+Route::get('/actividades', [App\Http\Controllers\Admin\ActividadesController::class, 'index'])->name('index');
 //
-Route::get('/actividades/crear', [App\Http\Controllers\ActividadesController::class, 'crear'])->name('crear');
+Route::get('/actividades/crear', [App\Http\Controllers\Admin\ActividadesController::class, 'crear'])->name('crear');
 
-Route::get('/actividades/{actividad}/editar', [App\Http\Controllers\ActividadesController::class, 'editar']);
+Route::get('/actividades/{actividad}/editar', [App\Http\Controllers\Admin\ActividadesController::class, 'editar']);
 
-Route::post('/actividades', [App\Http\Controllers\ActividadesController::class, 'enviar'])->name('enviar');
+Route::post('/actividades', [App\Http\Controllers\Admin\ActividadesController::class, 'enviar'])->name('enviar');
 
-Route::put('/actividades/{actividad}', [App\Http\Controllers\ActividadesController::class, 'actualizar']);
+Route::put('/actividades/{actividad}', [App\Http\Controllers\Admin\ActividadesController::class, 'actualizar']);
 
-Route::delete('/actividades/{actividad}', [App\Http\Controllers\ActividadesController::class, 'eliminar']);
+Route::delete('/actividades/{actividad}', [App\Http\Controllers\Admin\ActividadesController::class, 'eliminar']);
 
 //Ruta entrenadores 
-Route::resource('entrenadores','App\Http\Controllers\entrenadorController');
-Route::resource('clientes','App\Http\Controllers\clientesController');
+Route::resource('entrenadores','App\Http\Controllers\Admin\entrenadorController');
 
+Route::resource('clientes','App\Http\Controllers\Admin\clientesController');
+});
 
 
 

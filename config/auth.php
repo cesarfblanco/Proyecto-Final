@@ -43,19 +43,18 @@ return [
     ],
 
     /*
-    |--------------------------------------------------------------------------
-    | User Providers
-    |--------------------------------------------------------------------------
-    |
-    | All authentication drivers have a user provider. This defines how the
-    | users are actually retrieved out of your database or other storage
-    | mechanisms used by this application to persist your user's data.
-    |
-    | If you have multiple user tables or models you may configure multiple
-    | sources which represent each model / table. These sources may then
-    | be assigned to any extra authentication guards you have defined.
-    |
-    | Supported: "database", "eloquent"
+   | Proveedores de usuarios
+     |----------------------------------------------------------------- -------------------------
+     |
+     | Todos los controladores de autenticación tienen un proveedor de usuarios. Esto define cómo el
+     | los usuarios se recuperan de su base de datos u otro almacenamiento
+     | mecanismos utilizados por esta aplicación para conservar los datos de su usuario.
+     |
+     | Si tiene varias tablas de usuarios o modelos, puede configurar varios
+     | Fuentes que representan cada modelo/tabla. Estas fuentes pueden entonces
+     | asignarse a cualquier guardia de autenticación adicional que haya definido.
+     |
+     | Compatible: "base de datos", "elocuent"
     |
     */
 
@@ -76,13 +75,13 @@ return [
     | Resetting Passwords
     |--------------------------------------------------------------------------
     |
-    | You may specify multiple password reset configurations if you have more
-    | than one user table or model in the application and you want to have
-    | separate password reset settings based on the specific user types.
-    |
-    | The expire time is the number of minutes that each reset token will be
-    | considered valid. This security feature keeps tokens short-lived so
-    | they have less time to be guessed. You may change this as needed.
+| Puede especificar varias configuraciones de restablecimiento de contraseña si tiene más
+     | más de una tabla de usuario o modelo en la aplicación y desea tener
+     | configuraciones de restablecimiento de contraseña separadas según los tipos de usuario específicos.
+     |
+     | El tiempo de caducidad es la cantidad de minutos que cada token de reinicio será
+     | considerado válido. Esta función de seguridad hace que los tokens duren poco, por lo que
+     | tienen menos tiempo para ser adivinados. Puede cambiar esto según sea necesario.
     |
     */
 
@@ -96,14 +95,12 @@ return [
     ],
 
     /*
-    |--------------------------------------------------------------------------
-    | Password Confirmation Timeout
-    |--------------------------------------------------------------------------
+        | Tiempo de espera de confirmación de contraseña
+    |----------------------------------------------------------------- -------------------------
     |
-    | Here you may define the amount of seconds before a password confirmation
-    | times out and the user is prompted to re-enter their password via the
-    | confirmation screen. By default, the timeout lasts for three hours.
-    |
+    | Aquí puede definir la cantidad de segundos antes de una confirmación de contraseña
+    | se agota y se le pide al usuario que vuelva a ingresar su contraseña a través del
+    | pantalla de confirmación De forma predeterminada, el tiempo de espera dura tres horas
     */
 
     'password_timeout' => 10800,

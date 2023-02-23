@@ -46,7 +46,7 @@
                 <input type="date" name="FechaNac" value="{{ old('FechaNac') }}" class="form-control">
               </div>
 
-              <button type="submit" class="btn btn-sm btn-primary">Crear Actividad</button>
+              <button type="submit" class="btn btn-sm btn-primary">Crear Entrenador</button>
         </form>
       </div>
     </div>

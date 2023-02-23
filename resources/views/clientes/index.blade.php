@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="col-xl-10 mb-5 mb-xl-0">
+<div class="col-xl-12 mb-5 mb-xl-0">
     <div class="card shadow">
       <div class="card-header border-0">
         <div class="row align-items-center">
@@ -32,6 +32,7 @@
               <th scope="col">Fecha Nacimiento</th>
               <th scope="col">Telefono</th>
               <th scope="col">Acciones</th>
+
             </tr>
           </thead>
           <tbody>
@@ -53,13 +54,12 @@
               <td>
                 {{ $item->tlf }}
               </td>
-              
               <td>
                 {{-- Obtenemos el id seleccionado para eliminar y editar --}}
                 <form action="{{ url('/clientes/'.$item->id) }}" method="post">
                     @csrf
                     @method('DELETE')
-                    <a href="{{ url('/clientes/'.$item->id. '/editar') }}" class="btn btn-sm btn-success">Editar</a>
+                    <a href="{{ url('/clientes/'.$item->id. '/edit') }}" class="btn btn-sm btn-success">Editar</a>
                     <button class="btn btn-sm btn-danger" type="submit">Eliminar</button>
                 </form>
               </td>
@@ -69,6 +69,9 @@
           </tbody>
         </table>
       </div>
+    </div>
+    <div class="card-body">
+      {{ $clientes->links() }}
     </div>
   </div>
 @endsection

@@ -27,6 +27,7 @@ class UserFactory extends Factory
             'remember_token' => Str::random(10),
             //faker genera datos para testeo
             'tlf' => $this->faker->tollFreePhoneNumber(),
+            'role' => $this->faker->randomElement(['clientes','entrenadores']),
         ];
     }
 

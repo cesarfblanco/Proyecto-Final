@@ -44,7 +44,7 @@
                 <input type="time" name="horario" value="{{ old('horario', $actividad->horario) }}" class="form-control">
               </div>
 
-              <button type="submit" class="btn btn-sm btn-primary">Guardar A123ctividad</button>
+              <button type="submit" class="btn btn-sm btn-primary">Guardar Actividad</button>
         </form>
       </div>
     </div>
