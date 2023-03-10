@@ -10,14 +10,14 @@
             <h3 class="mb-0">Cliente</h3>
           </div>
           <div class="col text-right">
-            <a href="{{ url('/clientes/crear') }}" class="btn btn-sm btn-info">Agregar Cliente</a>
+            <a href="{{ url('/clientes/create') }}" class="btn btn-sm btn-info">Agregar Cliente</a>
           </div>
         </div>
       </div>
       <div class="card-body">
-        @if (session('msg'))
+        @if (session('notificacion'))
             <div class="alert alert-success" role="alert">
-                {{ session('msg') }}
+                {{ session('notificacion') }}
             </div>
         @endif
       </div>

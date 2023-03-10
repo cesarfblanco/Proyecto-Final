@@ -40,8 +40,14 @@ class entrenadorController extends Controller
         $this->validate($request,$rules,$msg);
 
         User::create(
-            $request->only('name', 'apellido', 'email', 'FechaNac')
+            $request->only('name', 'apellido', 'email', 'FechaNac')   + [
+                'role' => 'entrenadores',
+                'password' => bcrypt($request->input('password'))
+            ]
         );
+
+        $notificacion = 'El entrenador se ha creado correctamente.';
+        return redirect('/entrenadores')->with(compact('notificacion'));
     }
 
     public function show($id)
@@ -72,6 +78,7 @@ class entrenadorController extends Controller
             'email.email' => 'Ingresa una dirección valida',
         ];
         $this->validate($request,$rules,$msg);
+
         $user = User::entrenadores()->findOrFail($id);
 
         $data = $request->only('name', 'apellido', 'email', 'FechaNac');

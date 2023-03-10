@@ -23,6 +23,30 @@ class clientesController extends Controller
 
     public function store(Request $request)
     {
+        $rules = [
+            'name' => 'required|min:3',
+            'email' => 'required|email',
+            'FechaNac' => 'required',
+
+        ];
+
+        $msg = [
+            'name.required' => 'El nombre del cliente es obligatorio',
+            'name.min' => 'Minimo 3 caracteres el nombre',
+            'email.required' => 'El correo electronico es obligatorio',
+            'email.email' => 'Ingresa una dirección valida',
+        ];
+        $this->validate($request,$rules,$msg);
+
+        User::create(
+            $request->only('name', 'apellido', 'email','tlf', 'FechaNac')   + [
+                'role' => 'clientes',
+                'password' => bcrypt($request->input('password'))
+            ]
+        );
+
+        $notificacion = 'El cliente se ha creado correctamente.';
+        return redirect('/clientes')->with(compact('notificacion'));
     }
 
     public function show()
@@ -57,7 +81,7 @@ class clientesController extends Controller
         $this->validate($request,$rules,$msg);
         $user = User::clientes()->findOrFail($id);
 
-        $data = $request->only('name', 'apellido', 'email', 'FechaNac');
+        $data = $request->only('name', 'apellido', 'email', 'FechaNac','tlf');
         $password = $request->input('password');
 
         //guardamos el password encriptado en data

@@ -28,11 +28,11 @@ Route::middleware(['auth', 'admin'])->group(function () {
 Route::get('/actividades', [App\Http\Controllers\Admin\ActividadesController::class, 'index'])->name('index');
 //
 Route::get('/actividades/crear', [App\Http\Controllers\Admin\ActividadesController::class, 'crear'])->name('crear');
-
+//{actividad} nos quedamos con el id de las actividades
 Route::get('/actividades/{actividad}/editar', [App\Http\Controllers\Admin\ActividadesController::class, 'editar']);
 
 Route::post('/actividades', [App\Http\Controllers\Admin\ActividadesController::class, 'enviar'])->name('enviar');
-
+//PUT crea un nuevo elemento o reemplaza una representación del elemento de destino con los datos de la petición
 Route::put('/actividades/{actividad}', [App\Http\Controllers\Admin\ActividadesController::class, 'actualizar']);
 
 Route::delete('/actividades/{actividad}', [App\Http\Controllers\Admin\ActividadesController::class, 'eliminar']);

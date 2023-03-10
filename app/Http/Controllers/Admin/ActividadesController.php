@@ -20,6 +20,7 @@ class ActividadesController extends Controller
         return view('actividades.crear');
     }
 
+    //con el eloquent creamos la actividad directamente en la bbdd con save y hacemos las comprobaciones
     public function enviar(Request $request){
         //nombre requerido minimo tres caracteres
         $reglas = [

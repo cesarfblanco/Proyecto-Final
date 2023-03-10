@@ -14,7 +14,8 @@ class User extends Authenticatable
 
    
 
-     //La propiedad fillable es para visualizar los campos de la tabla en las consultas sql
+     //Dentro de este array se pueden especificar cuáles de los campos de la tabla pueden ser llenados con asignación masiva 
+     //(que es el caso cuando enviamos un formulario creando un array asociativo para ser guardado).
     protected $fillable = [
         'name',
         'apellido',

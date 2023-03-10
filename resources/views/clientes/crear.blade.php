@@ -10,7 +10,7 @@
             <h3 class="mb-0">Nuevo Cliente</h3>
           </div>
           <div class="col text-right">
-            <a href="{{ url('/actividades') }}" class="btn btn-sm btn-info">
+            <a href="{{ url('/clientes') }}" class="btn btn-sm btn-info">
                <i class="fas fa-chevron-left"></i> Regresar</a>
           </div>
         </div>
@@ -33,12 +33,12 @@
 
              <div class="form-group">
                 <label for="Apellido">Apellido</label> 
-                <input type="text" name="Apellido" value="{{ old('Apellido') }}" class="form-control">
+                <input type="text" name="apellido" value="{{ old('apellido') }}" class="form-control">
               </div>
 
               <div class="form-group">
                 <label for="email">Correo Electronico</label> 
-                <input type="date" name="email" value="{{ old('email') }}" class="form-control">
+                <input type="email" name="email" value="{{ old('email') }}" class="form-control">
               </div>
 
               <div class="form-group">
@@ -50,6 +50,11 @@
                 <label for="tlf">Telefono</label> 
                 <input type="text" name="tlf" value="{{ old('tlf') }}" class="form-control" maxlength="9">
               </div>
+              <div class="form-group">
+                <label for="password">Contraseña</label>
+                <input type="text" name="password" class="form-control"
+                    value="{{ old('password', Str::random(8)) }}">
+            </div>
 
               <button type="submit" class="btn btn-sm btn-primary">Crear Cliente</button>
         </form>
